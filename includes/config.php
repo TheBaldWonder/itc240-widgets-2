@@ -8,19 +8,20 @@ stores configuration information for our web application
 
 //removes header already sent errors
 ob_start();
+ini_set('session.cookie_domain', '.dreamhosters.com' );
 
 define('SECURE',false); #force secure, https, for all site pages
 
 define('PREFIX', 'widgets_wn18_'); #Adds uniqueness to your DB table names.  Limits hackability, naming collisions
 
-header("Cache-Control: no-cache");header("Expires: -1");#Helps stop browser & proxy caching
+//header("Cache-Control: no-cache");header("Expires: -1");#Helps stop browser & proxy caching
 
 define('DEBUG',true); #we want to see all errors
 
 include 'credentials.php';//stores database info
 include 'common.php';//stores favorite functions
 
-ini_set('session.cookie_domain', '.dreamhosters.com' );
+
 //prevents date errors
 date_default_timezone_set('America/Los_Angeles');
 

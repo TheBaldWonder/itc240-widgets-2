@@ -20,6 +20,7 @@ define('DEBUG',true); #we want to see all errors
 include 'credentials.php';//stores database info
 include 'common.php';//stores favorite functions
 
+ini_set('session.cookie_domain', '.dreamhosters.com' );
 //prevents date errors
 date_default_timezone_set('America/Los_Angeles');
 
@@ -55,8 +56,8 @@ if (SECURE && $_SERVER['SERVER_PORT'] != 443) {#force HTTPS
 }
 $config->virtual_path = $protocol . $_SERVER["HTTP_HOST"] . '/' . $sub_folder;
 
-define('ADMIN_PATH', $config->virtual_path . '/admin/'); # Could change to sub folder
-define('INCLUDE_PATH', $config->physical_path . '/includes/');
+define('ADMIN_PATH', $config->virtual_path . 'admin/'); # Could change to sub folder
+define('INCLUDE_PATH', $config->physical_path . 'includes/');
 
 //END NEW THEME STUFF
 
